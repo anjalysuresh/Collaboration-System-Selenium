@@ -12,7 +12,7 @@ class TestRecommendation(unittest.TestCase):
     def setUp(self):
         #self.driver = webdriver.Firefox()
 	    # RECOMMENDATION_SYSTEM_DOCKER_ADDRESS = config("RECOMMENDATION_SYSTEM_ADDRESS")
-	    self.driver = webdriver.Remote(command_executor='http://'+RECOMMENDATION_SYSTEM_DOCKER_ADDRESS+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+	self.driver = webdriver.Remote(command_executor='http://'+RECOMMENDATION_SYSTEM_DOCKER_ADDRESS+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
         # RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS=config("RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS")
         # RECOMMENDATION_SYSTEM_PASSWORD = config("RECOMMENDATION_SYSTEM_PASSWORD")
         # RECOMMENDATION_SYSTEM_NAME = config("RECOMMENDATION_SYSTEM_NAME")
