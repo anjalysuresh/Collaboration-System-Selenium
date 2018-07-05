@@ -6,10 +6,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class signup(unittest.TestCase):
 
+	def setUp(self):
+		self.driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 
 
 	def test_draftToVisisbleState(self):
-		#driver = webdriver.Firefox()
+		driver = self.driver
 		driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT'))
 		driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
