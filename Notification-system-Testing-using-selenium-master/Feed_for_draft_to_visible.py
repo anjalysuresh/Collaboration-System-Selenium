@@ -6,8 +6,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class signup(unittest.TestCase):
 
-	def setUp(self):
-		self.driver = webdriver.Firefox()
+
 
 	def test_draftToVisisbleState(self):
 		#driver = webdriver.Firefox()
