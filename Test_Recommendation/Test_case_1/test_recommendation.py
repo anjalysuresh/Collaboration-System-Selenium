@@ -7,6 +7,7 @@ RECOMMENDATION_SYSTEM_DOCKER_ADDRESS = config("RECOMMENDATION_SYSTEM_DOCKER_ADDR
 RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS=config("RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS")
 RECOMMENDATION_SYSTEM_PASSWORD = config("RECOMMENDATION_SYSTEM_PASSWORD")
 RECOMMENDATION_SYSTEM_NAME = config("RECOMMENDATION_SYSTEM_NAME")
+CC_IP_PORT = config('CC_IP_PORT')
 
 class TestRecommendation(unittest.TestCase):
     def setUp(self):
@@ -17,14 +18,14 @@ class TestRecommendation(unittest.TestCase):
         #print(RECOMMENDATION_SYSTEM_NAME)
         #print(RECOMMENDATION_SYSTEM_PASSWORD)
         #print(RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS)
-        self.login_link="http://" + RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS+ "/login/?next=/"
-        self.article_link="http://"+RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS +"/articles/"
+        self.login_link="http://" + CC_IP_PORT+ "/login/?next=/"
+        self.article_link="http://"+CC_IP_PORT +"/articles/"
         #print(self.article_link)
         #print(self.login_link)
-        self.logout_link="http://"+ RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS+ "/logout/"
+        self.logout_link="http://"+ CC_IP_PORT+ "/logout/"
         #print(self.logout_link)
-        #self.driver.maximize_window() #For maximizing window
-        #self.driver.implicitly_wait(20) #gives an implicit wait for 20 seconds
+        self.driver.maximize_window() #For maximizing window
+        self.driver.implicitly_wait(20) #gives an implicit wait for 20 seconds
         self.driver.get(self.login_link)
         elem = self.driver.find_element_by_id("id_username")
         elem.send_keys(RECOMMENDATION_SYSTEM_NAME)
