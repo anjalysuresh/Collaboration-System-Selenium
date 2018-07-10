@@ -23,8 +23,8 @@ class TestRecommendation(unittest.TestCase):
         #print(self.login_link)
         self.logout_link="http://"+ RECOMMENDATION_SYSTEM_DEPLOY_ADDRESS+ "/logout/"
         #print(self.logout_link)
-        self.driver.maximize_window() #For maximizing window
-        self.driver.implicitly_wait(20) #gives an implicit wait for 20 seconds
+        #self.driver.maximize_window() #For maximizing window
+        #self.driver.implicitly_wait(20) #gives an implicit wait for 20 seconds
         self.driver.get(self.login_link)
         elem = self.driver.find_element_by_id("id_username")
         elem.send_keys(RECOMMENDATION_SYSTEM_NAME)
