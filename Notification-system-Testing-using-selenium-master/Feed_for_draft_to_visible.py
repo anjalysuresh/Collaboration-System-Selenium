@@ -22,7 +22,7 @@ class signup(unittest.TestCase):
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
-		driver.get("http://" + config('IP_ADDRESS') + '/mydashboard/')
+		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
 		driver.find_element_by_xpath('//a [@href="/article-view/4/"]').click()
 		driver.find_element_by_xpath('//a [@href="/article-edit/4/"]').click()
 		#make the id as visible of the button of visible in html file
