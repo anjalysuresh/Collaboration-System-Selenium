@@ -35,28 +35,28 @@ class TestRecommendation(unittest.TestCase):
 
     def test_recommendation(self):
         self.driver.get(self.article_link)
-        self.driver.implicitly_wait(2000)
+        #self.driver.implicitly_wait(2000)
         elem = self.driver.find_elements_by_tag_name('h3')
         RECOMMENDATION_SYSTEM_NAME=elem[0].text
         self.driver.find_element_by_link_text(RECOMMENDATION_SYSTEM_NAME).click()
-        self.driver.implicitly_wait(2000)
+        #self.driver.implicitly_wait(2000)
         elem=self.driver.find_elements_by_class_name('alert.alert-info')[1]
         elem1=elem.find_elements_by_tag_name('h5')
         n=len(elem1)
         for i in range(n):
-            self.driver.implicitly_wait(20)
+            #self.driver.implicitly_wait(20)
             elem1=elem.find_elements_by_tag_name('h5')
             c=elem1[i].text
             #print(c)
             self.driver.find_element_by_link_text(c).click()
-            self.driver.implicitly_wait(2000)
+            #self.driver.implicitly_wait(2000)
             assert "Page not found" not in self.driver.page_source
             self.driver.get(self.article_link)
-            self.driver.implicitly_wait(2000)
+            #self.driver.implicitly_wait(2000)
             elem = self.driver.find_elements_by_tag_name('h3')
             RECOMMENDATION_SYSTEM_NAME=elem[0].text
             self.driver.find_element_by_link_text(RECOMMENDATION_SYSTEM_NAME).click()
-            self.driver.implicitly_wait(2000)
+            #self.driver.implicitly_wait(2000)
             elem=self.driver.find_elements_by_class_name('alert.alert-info')[1]
             elem1=elem.find_elements_by_tag_name('h5')
 
