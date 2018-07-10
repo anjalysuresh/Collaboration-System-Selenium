@@ -40,7 +40,7 @@ class TestRecommendation(unittest.TestCase):
         RECOMMENDATION_SYSTEM_NAME=elem[0].text
         self.driver.find_element_by_link_text(RECOMMENDATION_SYSTEM_NAME).click()
         #self.driver.implicitly_wait(2000)
-        elem=self.driver.find_elements_by_class_name('alert.alert-info')[1]
+        elem=self.driver.find_elements_by_class_name('alert.alert-info')[0]
         elem1=elem.find_elements_by_tag_name('h5')
         n=len(elem1)
         for i in range(n):
@@ -57,7 +57,7 @@ class TestRecommendation(unittest.TestCase):
             RECOMMENDATION_SYSTEM_NAME=elem[0].text
             self.driver.find_element_by_link_text(RECOMMENDATION_SYSTEM_NAME).click()
             #self.driver.implicitly_wait(2000)
-            elem=self.driver.find_elements_by_class_name('alert.alert-info')[1]
+            elem=self.driver.find_elements_by_class_name('alert.alert-info')[0]
             elem1=elem.find_elements_by_tag_name('h5')
 
     def tearDown(self):
