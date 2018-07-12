@@ -24,8 +24,8 @@ class signup(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
 		e = driver.find_element_by_id("myArticles_info");
-		driver.find_element_by_xpath('//a [@href="/article-view/7/"]').click()
-		#driver.find_element_by_xpath('//a [@href="/article-edit/7/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-view/8/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-edit/8/"]').click()
 		#make the id as visible of the button of visible in html file
 		driver.find_element_by_id('publish').click()
 		driver.find_element_by_xpath('//a [@href="/community-view/2/"]').click()
