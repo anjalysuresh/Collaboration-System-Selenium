@@ -23,8 +23,8 @@ class signup(unittest.TestCase):
 		driver = webdriver.Firefox()
 		self.login(0,driver)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
-		driver.find_element_by_xpath('//a [@href="/article-view/5/"]').click()
-		driver.find_element_by_xpath('//a [@href="/article-edit/5/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-view/8/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-edit/8/"]').click()
 		#make the id as visible of the button of visible in html file
 		driver.find_element_by_id('publish').click()
 		driver.find_element_by_xpath('//a [@href="/community-view/2/"]').click()
