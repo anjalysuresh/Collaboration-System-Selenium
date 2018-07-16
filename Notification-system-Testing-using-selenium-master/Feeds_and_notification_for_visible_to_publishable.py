@@ -37,7 +37,7 @@ class signup(unittest.TestCase):
 # 		self.login(1)
 # 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + "/notifications/")
 
-	@classmethod
+	
 	def tearDown(cls):
 		cls.driver.quit()
 
