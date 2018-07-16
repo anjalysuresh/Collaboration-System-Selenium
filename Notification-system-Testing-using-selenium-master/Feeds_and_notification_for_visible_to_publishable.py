@@ -2,6 +2,7 @@ __author__= 'shubh'
 import unittest
 from decouple import config
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class signup(unittest.TestCase):
 	@classmethod
