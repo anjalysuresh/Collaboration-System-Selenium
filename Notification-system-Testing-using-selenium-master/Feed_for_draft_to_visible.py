@@ -28,8 +28,8 @@ class signup(unittest.TestCase):
 		driver.find_element_by_xpath('//a [@href="/article-edit/8/"]').click()
 		#make the id as visible of the button of visible in html file
 		#driver.find_element_by_id('publish').click()
-		driver.find_element_by_xpath('//a [@href="/community-view/"' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
-		driver.find_element_by_xpath('//a [@href="/community_feed/"' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 
 	def tearDown(self):
 		self.driver.quit()
