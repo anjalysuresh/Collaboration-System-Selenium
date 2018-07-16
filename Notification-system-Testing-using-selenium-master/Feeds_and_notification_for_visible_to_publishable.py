@@ -23,6 +23,7 @@ class signup(unittest.TestCase):
 
 	def test_draftToVisisbleState(self):
 		self.login(0)
+		driver = self.driver
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
 		driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
