@@ -23,7 +23,7 @@ class signup(unittest.TestCase):
 
 	def fillTheForm(self,var,roleid):
 		driver = self.driver
-		print (driver.getCurrentUrl())
+		print (driver.current_url)
 		elem = driver.find_element_by_id("username")
 		user = config('NOTIFICATION_USER').split(',')
 		elem.send_keys(user[var])
@@ -48,7 +48,9 @@ class signup(unittest.TestCase):
 				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 				driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+				print (driver.current_url)
 				driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+				print (driver.current_url)
 				self.fillTheForm(i,j)
 		
 			
