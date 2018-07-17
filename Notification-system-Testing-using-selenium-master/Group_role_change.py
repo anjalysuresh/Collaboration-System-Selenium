@@ -22,6 +22,7 @@ class signup(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 
 	def fillTheForm(self,var,roleid):
+		driver = self.driver
 		elem = driver.find_element_by_id("username")
 		user = config('NOTIFICATION_USER').split(',')
 		elem.send_keys(user[var])
@@ -47,7 +48,7 @@ class signup(unittest.TestCase):
 				driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
-				self.fillTheForm(driver,i,j)
+				self.fillTheForm(i,j)
 		
 			
 			
