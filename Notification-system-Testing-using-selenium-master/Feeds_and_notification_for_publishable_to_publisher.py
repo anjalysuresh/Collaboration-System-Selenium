@@ -5,7 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class signup(unittest.TestCase):
-	def setUpClass(self):
+	
+	def setUp(self):
 		self.driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 
 	def login(self,var):
