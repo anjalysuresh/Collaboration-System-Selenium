@@ -23,6 +23,7 @@ class signup(unittest.TestCase):
 
 	def fillTheForm(self,var,roleid):
 		driver = self.driver
+		print (driver.getCurrentUrl())
 		elem = driver.find_element_by_id("username")
 		user = config('NOTIFICATION_USER').split(',')
 		elem.send_keys(user[var])
