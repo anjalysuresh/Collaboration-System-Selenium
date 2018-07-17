@@ -43,7 +43,7 @@ class signup(unittest.TestCase):
 		for i in range(1,4):
 			for j in range(0,3):
 				self.login(0)
-				driver.get(config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
+				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 				driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
