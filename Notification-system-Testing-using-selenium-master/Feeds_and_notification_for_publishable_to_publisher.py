@@ -25,7 +25,6 @@ class signup(unittest.TestCase):
 		driver = self.driver
 		self.login(var)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + "/notifications/")
-		driver.implicitly_wait(100)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 	def test_PublishableToPublishedState(self):	
@@ -41,14 +40,12 @@ class signup(unittest.TestCase):
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
-		driver.implicitly_wait(100)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 		for i in range(0,4):
 			self.checkAllUserNotification(i)
 
 
 
-	@classmethod
 	def tearDown(cls):
 		cls.driver.quit()
 
