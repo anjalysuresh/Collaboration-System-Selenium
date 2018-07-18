@@ -45,7 +45,7 @@ class signup(unittest.TestCase):
 
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
-		for i in range(1,4):
+		for i in range(1,3):
 			for j in range(0,3):
 				self.login(0)
 				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
