@@ -16,6 +16,7 @@ class signup(unittest.TestCase):
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
 		elem = driver.find_element_by_id("id_username")
 		user = config('NOTIFICATION_USER').split(',')
+		print(user[var])
 		elem.send_keys(user[var])
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
@@ -26,6 +27,7 @@ class signup(unittest.TestCase):
 		self.login(4)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_id("join-us").click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/notifications/')
 			
