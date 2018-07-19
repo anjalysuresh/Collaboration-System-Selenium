@@ -29,12 +29,7 @@ class signup(unittest.TestCase):
 		driver.find_element_by_id("Unsubscribe").click()
 		driver.find_element_by_id("communityUnsubscribe").click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/notifications/')
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
-		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
-		driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
-		#make the id as visible of the button of visible in html file
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
-			
+
 	def tearDown(cls):
 		cls.driver.quit()
 
