@@ -27,16 +27,18 @@ class signup(unittest.TestCase):
 		elem = driver.find_element_by_id("username")
 		user = config('user').split(',')
 		elem.send_keys(user[var])
+		print ("removing user: " + user[var])
 		driver.find_element_by_id('remove').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 		self.login(var)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/notifications/')
+		print ("notified")
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
 		for i in range(1,3):
-			self.login(3)
+			self.login(3) # login with admin as admin can remove users from community
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 			driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
