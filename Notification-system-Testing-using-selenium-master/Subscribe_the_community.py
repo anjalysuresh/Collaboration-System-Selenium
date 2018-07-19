@@ -10,6 +10,7 @@ class signup(unittest.TestCase):
 		self.driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 
 	def login(self,var):
+		driver = self.driver
 		driver.get("http://" + config('IP_ADDRESS')+ ":" + config('NOTIFICATION_PORT'))
 		driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
