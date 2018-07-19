@@ -34,18 +34,20 @@ class signup(unittest.TestCase):
 		self.login(var,driver)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/notifications/')
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
-		driver.find_element_by_xpath('//a [@href="/community-view/2/"]').click()
-		driver.find_element_by_xpath('//a [@href="/community_feed/2/"]').click()
+		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
 		for i in range(1,4):
 			for j in range(0,3):
-				self.login(0)
+				self.login(3)	# login with admin to change role of community members
 				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 				driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+				print (driver.current_url)
 				driver.find_element_by_xpath('//a [@href="/manage_community/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+				print (driver.current_url)
 				self.fillTheForm(i,j)
 		
 			
