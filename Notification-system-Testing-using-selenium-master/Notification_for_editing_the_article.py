@@ -26,11 +26,13 @@ class signup(unittest.TestCase):
 		for i in range(0,3):
 			self.login(i)
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
+			print (driver.current_url)
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 			driver.find_element_by_xpath('//a [@href="/community_content/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 			#make the id as visible of the button of visible in html file
 			print (driver.current_url)
 			driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
+			print (driver.current_url)
 			driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
 			driver.find_element_by_id('savechanges').click()
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
