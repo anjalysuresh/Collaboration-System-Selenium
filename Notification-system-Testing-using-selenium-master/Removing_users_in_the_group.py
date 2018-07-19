@@ -42,7 +42,7 @@ class signup(unittest.TestCase):
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 			driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
-			driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+			driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 			self.fillTheForm(driver,i)
 		
 	def tearDown(cls):
