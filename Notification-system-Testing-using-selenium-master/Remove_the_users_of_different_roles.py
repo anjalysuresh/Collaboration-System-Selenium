@@ -25,7 +25,7 @@ class signup(unittest.TestCase):
 	def fillTheForm(self,var):
 		driver = self.driver
 		elem = driver.find_element_by_id("username")
-		user = config('user').split(',')
+		user = config('NOTIFICATION_USER').split(',')
 		elem.send_keys(user[var])
 		print ("removing user: " + user[var])
 		driver.find_element_by_id('remove').click()
