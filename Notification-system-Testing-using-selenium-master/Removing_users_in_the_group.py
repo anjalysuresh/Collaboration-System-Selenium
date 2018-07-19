@@ -7,7 +7,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class signup(unittest.TestCase):
 
-	def setUp(cls):
+	def setUp(self):
 		self.driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 
 	def login(self,var):
@@ -38,7 +38,7 @@ class signup(unittest.TestCase):
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
 		for i in range(1,3):
-			self.login(0)
+			self.login(0) # login with tester
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 			driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
