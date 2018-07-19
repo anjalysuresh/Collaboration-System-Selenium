@@ -31,7 +31,7 @@ class signup(unittest.TestCase):
 		elem.send_keys(role[roleid])
 		driver.find_element_by_id('update').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
-		self.login(var,driver)
+		self.login(var)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/notifications/')
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
