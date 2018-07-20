@@ -23,7 +23,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
-		name ="Test Community 1"
+		name ="Test Community 2"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
@@ -39,7 +39,7 @@ class create_env(unittest.TestCase):
 		elem = driver.find_element_by_id("username")
 		elem.send_keys(username)
 		element = driver.find_element_by_id("community_image")
-		element.send_keys("/var/jenkins_home/workspace/Notification_Selenium/Notification-system-Testing-using-selenium-master/community.jpg")
+		element.send_keys("https://picsum.photos/200/300")
 		element =driver.find_element_by_id("create")
 		element.click()
 		# Extracting the community id
