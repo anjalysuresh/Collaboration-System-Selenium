@@ -39,7 +39,7 @@ class create_env(unittest.TestCase):
 		elem = driver.find_element_by_id("username")
 		elem.send_keys(username)
 		element = driver.find_element_by_id("community_image")
-		element.send_keys("https://picsum.photos/200/300")
+		element.send_keys("/var/lib/docker/volumes/7395fb387cf4d8a0754baa47bf536ea896ffe25595975b8bd857cab7233738aa/_data/workspace/Notification_Selenium/Notification-system-Testing-using-selenium-master/community.jpg")
 		element =driver.find_element_by_id("create")
 		element.click()
 		# Extracting the community id
