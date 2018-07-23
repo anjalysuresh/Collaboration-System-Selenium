@@ -39,7 +39,7 @@ class create_env(unittest.TestCase):
 		role = config('NOTIFICATION_ROLE').split(',')
 		elem = driver.find_element_by_id("role")
 		elem.send_keys(role[role_id])
-		driver.findElement(By.xpath("//button[@value='add']")).click()
+		driver.find_element_by_id('add').click()
 
 
 	def test_assigning_roles(self):
