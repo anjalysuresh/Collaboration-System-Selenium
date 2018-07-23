@@ -23,7 +23,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
-		name ="Test Community"
+		name ="Test Community3"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
@@ -38,8 +38,8 @@ class create_env(unittest.TestCase):
 		elem.send_keys(category)
 		elem = driver.find_element_by_id("username")
 		elem.send_keys(username)
-		element = driver.find_element_by_id("community_image")
-		element.send_keys("/home/anjali/community.jpg")
+		#element = driver.find_element_by_id("community_image")
+		#element.send_keys("/home/anjali/community.jpg")
 		element =driver.find_element_by_id("create")
 		element.click()
 		# Extracting the community id
