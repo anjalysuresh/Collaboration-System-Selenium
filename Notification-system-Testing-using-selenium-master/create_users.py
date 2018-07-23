@@ -29,10 +29,10 @@ class create_env(unittest.TestCase):
 		user = config('NOTIFICATION_USER').split(',')
 		password = config('NOTIFICATION_PASSWORD')
 		email = "@gmail.com"
-		create_user(user[0],user[0]+email,password)
-		create_user(user[1],user[1]+email,password)
-		create_user(user[2],user[2]+email,password)
-		create_user(user[4],user[4]+email,password)
+		self.create_user(user[0],user[0]+email,password)
+		self.create_user(user[1],user[1]+email,password)
+		self.create_user(user[2],user[2]+email,password)
+		self.create_user(user[4],user[4]+email,password)
 
 
 	def tearDown(self):
