@@ -34,12 +34,18 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_id("exampleCheck1").click()
 		driver.find_element_by_id("articleCreate").click()
 		title = driver.find_element_by_id("title")
-		title.send_keys("TESTINGA")
+		title.send_keys("TESTINGAaaa")
 		driver.find_element_by_id("next1").click()
 		time.sleep(10)
 		driver.find_element_by_id("next2").click()
 		time.sleep(10)
 		driver.find_element_by_id("finish").click()
+		# Extracting the ARTICLE id
+		var = driver.current_url
+		article_id = var.split("/")[-2]
+		f = open(".env","a")
+		f.write("NOTIFICATION_ARTICLE_ID="+article_id)
+		f.close()
 		
 
 		
