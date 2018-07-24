@@ -36,6 +36,12 @@ class create_env(unittest.TestCase):
 		title = driver.find_element_by_id("title")
 		title.send_keys("TESTING_GROUPA")
 		driver.find_element_by_id("grpCreate").click()
+		# Extracting the group id
+		var = driver.current_url
+		group_id = var.split("/")[-2]
+		f = open(".env","a")
+		f.write("NOTIFICATION_GROUP_ID="+group_id)
+		f.close()
 
 
 		
