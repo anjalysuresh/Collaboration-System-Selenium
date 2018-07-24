@@ -46,7 +46,7 @@ class create_env(unittest.TestCase):
 		var = driver.current_url
 		community_id = var.split("/")[-2]
 		f = open(".env","a")
-		f.write("NOTIFICATION_COMMUNITY_ID="+community_id)
+		f.write("\nNOTIFICATION_COMMUNITY_ID="+community_id)
 		f.close()
 		
 		
