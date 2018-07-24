@@ -34,7 +34,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_id("exampleCheck2").click()
 		driver.find_element_by_id("groupCreate").click()
 		title = driver.find_element_by_id("title")
-		title.send_keys("TESTING_GROUP")
+		title.send_keys("TESTING_GROUPA")
 		driver.find_element_by_id("grpCreate").click()
 
 
