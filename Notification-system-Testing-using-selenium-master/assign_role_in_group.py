@@ -45,7 +45,7 @@ class create_env(unittest.TestCase):
 
 	def test_assigning_roles(self):
 		driver = self.driver
-		self.login(3)
+		self.login(0)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		print (driver.current_url)
