@@ -1,4 +1,6 @@
 __author__= 'shubh'
+
+import time
 import unittest
 from decouple import config
 from selenium import webdriver
@@ -26,8 +28,10 @@ class signup(unittest.TestCase):
 		e = driver.find_element_by_id("myArticles_info");
 		driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_ARTICLE_ID') + '/"]').click()
+		
 		#make the id as visible of the button of visible in html file
 		driver.find_element_by_id('publish').click()
+		time.sleep(5)
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/community_feed/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 
