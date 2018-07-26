@@ -49,7 +49,12 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_id("next2").click()
 		time.sleep(5)
 		driver.find_element_by_id("finish").click()
-		
+		# Extracting the ARTICLE id
+		var = driver.current_url
+		article_id = var.split("/")[-2]
+		f = open(".env","a")
+		f.write("\nNOTIFICATION_GROUP_ARTICLE_ID="+article_id)
+		f.close()
 
 		
 
