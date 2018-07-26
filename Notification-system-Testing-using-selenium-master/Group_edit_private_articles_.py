@@ -23,7 +23,7 @@ class signup(unittest.TestCase):
 
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
-		for i in range(1,4):
+		for i in range(1,3):
 			self.login(i)
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
