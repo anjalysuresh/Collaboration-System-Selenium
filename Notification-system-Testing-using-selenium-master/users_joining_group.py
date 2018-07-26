@@ -31,28 +31,16 @@ class create_env(unittest.TestCase):
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
 
-	def role_assign(self, user_id, role_id):
-		driver = self.driver
-		elem = driver.find_element_by_id("username")
-		user = config('NOTIFICATION_USER').split(',')
-		elem.send_keys(user[user_id])
-		role = config('NOTIFICATION_ROLE').split(',')
-		elem = driver.find_element_by_id("role")
-		elem.send_keys(role[role_id])
-		#driver.find_element_by_id('add').click()
-		driver.find_element_by_xpath("//button [@type='submit' and @value='add']").click()
-
 
 	def test_assigning_roles(self):
 		driver = self.driver
-		self.login(0)
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
-		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
-		print (driver.current_url)
-		driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
-		driver.find_element_by_xpath('//a [@href="/manage_group/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
-		self.role_assign(1,1)		# making publisher_notifications the publisher
-		self.role_assign(2,0)		# joining the user_notifications in this community as author
+		for i in (1,3):
+			self.login(i)
+			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
+			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+			print (driver.current_url)
+			driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+			driver.find_element_by_id('join_us').click()
 		
 
 	def tearDown(self):
