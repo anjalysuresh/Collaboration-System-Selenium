@@ -22,10 +22,12 @@ class signup(unittest.TestCase):
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
 
-	def test_draftToVisisbleState(self):	
+	def test_gropArticleDraftToVisisbleState(self):	
 		driver = self.driver
 		self.login(0)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
+		print (driver.current_url)
+		time.sleep(5)
 		driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
 		driver.find_element_by_id('visible').click()
