@@ -2,13 +2,16 @@ __author__= 'shubh'
 import unittest
 from decouple import config
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import time
 
 class signup(unittest.TestCase):
-	@classmethod
-	def setUpClass(cls):
-		cls.driver = webdriver.Firefox()
+	def setUp(self):
+		self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
+		#self.driver = webdriver.Firefox()
 
-	def login(self,var,driver):
+	def login(self,var):
+		driver = self.driver
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT'))
 		driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
@@ -20,24 +23,23 @@ class signup(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 
 	def test_draftToVisisbleState(self):	
-		driver = webdriver.Firefox()
-		self.login(0,driver)
+		driver = self.driver
+		self.login(0)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
-		driver.find_element_by_xpath('//a [@href="/article-view/8/"]').click()
-		driver.find_element_by_xpath('//a [@href="/article-edit/8/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
 		driver.find_element_by_id('visible').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
-		driver.find_element_by_xpath('//a [@href="/community-view/2/"]').click()
-		driver.find_element_by_xpath('//a [@href="/group-view/1/"]').click()
-		driver.find_element_by_xpath('//a [@href="/group-feed/1/"]').click()
+		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/group-feed/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 		for i in range(1,4):
-			self.login(i,driver)
+			self.login(i)
 			driver.find_element_by_xpath('//a [@href="/notifications/"]').click()
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 
-	@classmethod
 	def tearDown(cls):
 		cls.driver.quit()
 
