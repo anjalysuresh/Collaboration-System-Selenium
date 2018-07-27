@@ -23,7 +23,8 @@ class signup(unittest.TestCase):
 
 	def test_editVisibleArticle(self):	
 		driver = self.driver
-		for i in range(1,3):
+		# only community admin and community publisher can edit an article which is in visible state
+		for i in range(1,2):
 			self.login(i)
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
