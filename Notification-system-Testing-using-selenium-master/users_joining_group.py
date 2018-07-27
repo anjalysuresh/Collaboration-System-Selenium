@@ -26,6 +26,8 @@ class create_env(unittest.TestCase):
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
 		elem = driver.find_element_by_id("id_username")
 		user = config('NOTIFICATION_USER').split(',')
+		print (config('NOTIFICATION_USER'))
+		print (user)
 		elem.send_keys(user[var])
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
