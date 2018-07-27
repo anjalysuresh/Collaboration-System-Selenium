@@ -45,11 +45,11 @@ class signup(unittest.TestCase):
 		print (user+" becoming "+role)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
-	def test_draftToVisisbleState(self):	
+	def test_roleChangeOfMembersInGroup(self):	
 		driver = self.driver
-		for i in range(1,3):
+		for i in range(1,3):	# roles of publisher and user are being changed since they are the only two members of the group except tester who is the group admin
 			for j in range(0,3):
-				self.login(3)
+				self.login(0) # logging in with tester who is the group admin and can hence change anyone's role.
 				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 				driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 				driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
