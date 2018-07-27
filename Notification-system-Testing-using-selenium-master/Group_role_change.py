@@ -4,10 +4,11 @@ from decouple import config
 from selenium.webdriver.support.select import Select
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import time
 
 class signup(unittest.TestCase):
 	def setUp(self):
-		self.driver = webdriver.Remote(command_executor='http://'+'10.129.132.104'+':4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
+		self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)#,browser_profile=profile)
 
 	def login(self,var):
 		driver = self.driver
@@ -41,11 +42,12 @@ class signup(unittest.TestCase):
 		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/group-feed/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 		print (driver.current_url)
+		print (user+" becoming "+role)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 	def test_draftToVisisbleState(self):	
 		driver = self.driver
-		for i in range(1,4):
+		for i in range(1,3):
 			for j in range(0,3):
 				self.login(3)
 				driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
