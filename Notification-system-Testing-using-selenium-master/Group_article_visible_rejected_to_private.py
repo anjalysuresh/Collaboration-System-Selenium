@@ -23,14 +23,20 @@ class signup(unittest.TestCase):
 
 	def test_visibleRejectedToPrivateState(self):	
 		driver = self.driver
-		self.login(1) # logging in with publisher who is Community Admin and can hence publish/reject
+		self.login(1) # logging in with publisher who is Community Admin and can hence publish/reject and has not made the article visible himself
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/group_content/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/article-view/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/article-edit/' + config('NOTIFICATION_GROUP_ARTICLE_ID') + '/"]').click()
+		print (driver.current_url)
 		driver.find_element_by_id('reject').click()
+		print (driver.current_url)
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
