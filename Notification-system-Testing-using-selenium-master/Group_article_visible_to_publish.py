@@ -44,7 +44,7 @@ class signup(unittest.TestCase):
 		for i in range(1,4):
 			self.login(i)
 			driver.find_element_by_xpath('//a [@href="/notifications/"]').click()
-			driver.get("http://" + config('IP_ADDRESS') + 'logout/')
+			driver.get("http://" + config('IP_ADDRESS') + '/logout/')
 
 	def tearDown(cls):
 		cls.driver.quit()
