@@ -21,9 +21,9 @@ class signup(unittest.TestCase):
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
 
-	def test_articlePrivateToVisisbleState(self):
+	def test_articlePrivateToVisibleState(self):
 		driver = self.driver
-		self.login(0)
+		self.login(0) # logging in with tester, creater of the article
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/mydashboard/')
 		print (driver.current_url)
 		time.sleep(5)
