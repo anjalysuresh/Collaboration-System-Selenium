@@ -23,7 +23,7 @@ class signup(unittest.TestCase):
 
 	def test_visibleRejectedToPrivateState(self):	
 		driver = self.driver
-		self.login(1) # logging in with publisher who is Community Admin and can hence publish/reject and has not made the article visible himself
+		self.login(1) # logging in with publisher who is Community Admin and can hence publish/reject and is not creater of the article
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
 		print (driver.current_url)
