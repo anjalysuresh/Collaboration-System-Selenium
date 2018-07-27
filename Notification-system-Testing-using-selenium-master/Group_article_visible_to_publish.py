@@ -23,7 +23,7 @@ class signup(unittest.TestCase):
 
 	def test_visisbleToPublishState(self):	
 		driver = self.driver
-		self.login(2)
+		self.login(1) # logging in with publisher since from visible state, article can be published only by publisher
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
