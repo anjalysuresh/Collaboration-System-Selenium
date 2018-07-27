@@ -36,7 +36,6 @@ class create_env(unittest.TestCase):
 	def test_users_joining_group(self):
 		driver = self.driver
 		for i in range(1,3):
-			print (config('NOTIFICATION_USER').split(','))
 			self.login(i)
 			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
 			driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
