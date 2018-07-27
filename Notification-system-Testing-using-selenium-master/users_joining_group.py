@@ -41,6 +41,7 @@ class create_env(unittest.TestCase):
 			print (driver.current_url)
 			driver.find_element_by_xpath('//a [@href="/group-view/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 			driver.find_element_by_id('join_us').click()
+			driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 		
 
 	def tearDown(self):
