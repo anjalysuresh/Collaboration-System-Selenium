@@ -32,7 +32,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 
 
-	def test_assigning_roles(self):
+	def test_users_joining_group(self):
 		driver = self.driver
 		for i in (1,3):
 			self.login(i)
