@@ -30,6 +30,7 @@ class create_env(unittest.TestCase):
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('NOTIFICATION_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
+		print (user[var] + " joined.")
 
 
 	def test_users_joining_group(self):
