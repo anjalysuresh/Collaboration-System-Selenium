@@ -42,7 +42,7 @@ class signup(unittest.TestCase):
 		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/group-feed/' + config('NOTIFICATION_GROUP_ID') + '/"]').click()
 		print (driver.current_url)
-		print (user+" becoming "+role)
+		print (user[var]+" becoming "+role[roleid])
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/logout/')
 
 	def test_roleChangeOfMembersInGroup(self):	
