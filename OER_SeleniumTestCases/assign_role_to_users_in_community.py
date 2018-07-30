@@ -50,8 +50,8 @@ class create_env(unittest.TestCase):
 		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/manage_community/' + config('CONTENT_TOOLS_COMMUNITY_ID') + '/"]').click()
 		self.role_assign(1,1)		# making the publisher
-		self.role_assign(0,0)		# joining the tester_notifications in this community
-		self.role_assign(2,0)		# joining the user_notifications in this community
+		self.role_assign(0,0)		# joining the content_tools_notifications in this community
+		self.role_assign(2,0)		# joining the content_tools_notifications in this community
 		
 
 	def tearDown(self):
