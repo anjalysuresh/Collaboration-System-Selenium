@@ -1,0 +1,127 @@
+1530191022332	geckodriver	INFO	geckodriver 0.20.1
+1530191022353	geckodriver	INFO	Listening on 127.0.0.1:44051
+1530191023178	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Z5TluvM8koqO"
+1530191028649	Marionette	INFO	Listening on port 44665
+1530191028722	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530191029067	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 185"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:185
+onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:201
+_middleware/</<()@resource://activity-stream/lib/Store.jsm:49
+Store/this[method]()@resource://activity-stream/lib/Store.jsm:28
+uninit()@resource://activity-stream/lib/Store.jsm:151
+uninit()@resource://activity-stream/lib/ActivityStream.jsm:300
+uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:73
+shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:169
+callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4436
+observe()@resource://gre/modules/addons/XPIProvider.jsm:2287
+GeckoDriver.prototype.quit()@driver.js:3300
+despatch()@server.js:293
+execute()@server.js:267
+onPacket/<()@server.js:242
+onPacket()@server.js:241
+_onJSONObjectReady/<()@transport.js:500
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530191030261	geckodriver	INFO	geckodriver 0.20.1
+1530191030270	geckodriver	INFO	Listening on 127.0.0.1:36103
+1530191031267	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Bc5nhYLJPZof"
+1530191036172	Marionette	INFO	Listening on port 34697
+1530191036231	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530191036639	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 185"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:185
+onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:201
+_middleware/</<()@resource://activity-stream/lib/Store.jsm:49
+Store/this[method]()@resource://activity-stream/lib/Store.jsm:28
+uninit()@resource://activity-stream/lib/Store.jsm:151
+uninit()@resource://activity-stream/lib/ActivityStream.jsm:300
+uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:73
+shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:169
+callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4436
+observe()@resource://gre/modules/addons/XPIProvider.jsm:2287
+GeckoDriver.prototype.quit()@driver.js:3300
+despatch()@server.js:293
+execute()@server.js:267
+onPacket/<()@server.js:242
+onPacket()@server.js:241
+_onJSONObjectReady/<()@transport.js:500
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 683: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "JSON store: writing data"
+JavaScript error: jar:file:///usr/lib/firefox/browser/omni.ja!/components/nsBrowserGlue.js, line 1211: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Phase "profile-before-change" is finished, it is too late to register completion condition "JSON store: writing data"" {file: "resource://gre/modules/AsyncShutdown.jsm" line: 683}]'[JavaScript Error: "Phase "profile-before-change" is finished, it is too late to register completion condition "JSON store: writing data"" {file: "resource://gre/modules/AsyncShutdown.jsm" line: 683}]' when calling method: [nsIHandlerService::asyncInit]
+1530191037782	geckodriver	INFO	geckodriver 0.20.1
+1530191037788	geckodriver	INFO	Listening on 127.0.0.1:51157
+1530191038790	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.OsKpcoBkHFLy"
+1530191043571	Marionette	INFO	Listening on port 40159
+1530191043641	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530191043969	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 185"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:185
+onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:201
+_middleware/</<()@resource://activity-stream/lib/Store.jsm:49
+Store/this[method]()@resource://activity-stream/lib/Store.jsm:28
+uninit()@resource://activity-stream/lib/Store.jsm:151
+uninit()@resource://activity-stream/lib/ActivityStream.jsm:300
+uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:73
+shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:169
+callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4436
+observe()@resource://gre/modules/addons/XPIProvider.jsm:2287
+GeckoDriver.prototype.quit()@driver.js:3300
+despatch()@server.js:293
+execute()@server.js:267
+onPacket/<()@server.js:242
+onPacket()@server.js:241
+_onJSONObjectReady/<()@transport.js:500
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1530191044977	geckodriver	INFO	geckodriver 0.20.1
+1530191044986	geckodriver	INFO	Listening on 127.0.0.1:33891
+1530191045984	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.enBKFJcOLeTn"
+1530191050956	Marionette	INFO	Listening on port 36553
+1530191051035	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530191051532	geckodriver	INFO	geckodriver 0.20.1
+1530191051553	geckodriver	INFO	Listening on 127.0.0.1:37589
+1530191052530	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.nZWh8VPIWCc0"
+1530191057179	Marionette	INFO	Listening on port 33477
+1530191057305	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/, line 488: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/login/?next=/, line 347: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/login/?next=/, line 347: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+1530191278253	geckodriver	INFO	geckodriver 0.20.1
+1530191278258	geckodriver	INFO	Listening on 127.0.0.1:50309
+1530191279259	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.0BRhXpM7X4Ph"
+1530191283709	Marionette	INFO	Listening on port 36819
+1530191283799	Marionette	WARN	TLS certificate errors will be ignored for this session
+1530191284246	geckodriver	INFO	geckodriver 0.20.1
+1530191284284	geckodriver	INFO	Listening on 127.0.0.1:33869
+1530191285230	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ToISdL90goxy"
+1530191291994	Marionette	INFO	Listening on port 37519
+1530191292094	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/, line 488: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/login/?next=/, line 347: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/login/?next=/, line 347: ReferenceError: None is not defined
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:7000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:7000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:7000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
+JavaScript error: http://172.17.0.1:8000/static/js/scriptMyContrib.js, line 14: ReferenceError: articlesContributed is not defined
+JavaScript error: http://172.17.0.1:8000/static/datatable/dataTables.bootstrap4.min.js, line 5: TypeError: f is undefined
+JavaScript error: http://172.17.0.1:8000/static/assets/plugins/script.js, line 4: TypeError: $(...).appear is not a function
