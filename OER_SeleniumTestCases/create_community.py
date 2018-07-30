@@ -14,17 +14,17 @@ class create_env(unittest.TestCase):
 	def test_create_community(self):
 		driver = self.driver
 		# Logging in by admin
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/login")
+		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT')+"/login")
 		elem = driver.find_element_by_id("id_username")
-		user = config('NOTIFICATION_USER').split(',')
-		elem.send_keys(user[3])
+		user = config('CONTENT_TOOLS_USER')
+		elem.send_keys(user)
 		elem = driver.find_element_by_id("id_password")
-		elem.send_keys(config('NOTIFICATION_PASSWORD'))
+		elem.send_keys(config('CONTENT_TOOLS_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
 		# Creating community
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
-		name ="Test Community abc"
-		tag_line= "only meant for testing"
+		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT')+"/create_community")
+		name ="Test Community ContentTools"
+		tag_line= "only meant for testing CONTENT TOOLS"
 		description= "only meant for testing"
 		category= "testing"
 		username= "admin"
@@ -46,7 +46,7 @@ class create_env(unittest.TestCase):
 		var = driver.current_url
 		community_id = var.split("/")[-2]
 		f = open(".env","a")
-		f.write("\nNOTIFICATION_COMMUNITY_ID="+community_id)
+		f.write("\nCONTENT_TOOLS_COMMUNITY_ID="+community_id)
 		f.close()
 		
 		
