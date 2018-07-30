@@ -1,12 +1,11 @@
 __author__= 'Minali and Urmi'
 
-# Before running this script a community named "Test Community" should be created manually and the id of this community must be found out manually.
 # This script should assign the following roles to users:
-# tester_notifications should join the "Test Community"
-# publisher_notifications should be given the role of publisher in the community
-# user_notifications should join the "Test Community"
-# newuser_notifications should not be a member of this community.
-# tester_notifications should create an article in the draft state.
+# tester_contenttools should join the "Test Community"
+# publisher_contenttools should be given the role of publisher in the community
+# user_contenttools should join the "Test Community"
+# newuser_contenttools should not be a member of this community.
+
 
 
 import unittest
