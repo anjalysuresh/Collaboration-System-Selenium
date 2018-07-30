@@ -20,22 +20,22 @@ class create_env(unittest.TestCase):
 
 	def login(self,var):
 		driver = self.driver
-		driver.get("http://" + config('IP_ADDRESS')+ ":" + config('NOTIFICATION_PORT'))
+		driver.get("http://" + config('IP_ADDRESS')+ ":" + config('CONTENT_TOOLS_PORT'))
 		driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
+		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/login/?next=/')
 		elem = driver.find_element_by_id("id_username")
-		user = config('NOTIFICATION_USER').split(',')
+		user = config('CONTENT_TOOLS_USER').split(',')
 		elem.send_keys(user[var])
 		elem = driver.find_element_by_id("id_password")
-		elem.send_keys(config('NOTIFICATION_PASSWORD'))
+		elem.send_keys(config('CONTENT_TOOLS_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
 
 	def role_assign(self, user_id, role_id):
 		driver = self.driver
 		elem = driver.find_element_by_id("username")
-		user = config('NOTIFICATION_USER').split(',')
+		user = config('CONTENT_TOOLS_USER').split(',')
 		elem.send_keys(user[user_id])
-		role = config('NOTIFICATION_ROLE').split(',')
+		role = config('CONTENT_TOOLS_ROLE').split(',')
 		elem = driver.find_element_by_id("role")
 		elem.send_keys(role[role_id])
 		#driver.find_element_by_id('add').click()
@@ -45,10 +45,10 @@ class create_env(unittest.TestCase):
 	def test_assigning_roles(self):
 		driver = self.driver
 		self.login(3)
-		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/communities/')
-		driver.find_element_by_xpath('//a [@href="/community-view/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/communities/')
+		driver.find_element_by_xpath('//a [@href="/community-view/' + config('CONTENT_TOOLS_COMMUNITY_ID') + '/"]').click()
 		print (driver.current_url)
-		driver.find_element_by_xpath('//a [@href="/manage_community/' + config('NOTIFICATION_COMMUNITY_ID') + '/"]').click()
+		driver.find_element_by_xpath('//a [@href="/manage_community/' + config('CONTENT_TOOLS_COMMUNITY_ID') + '/"]').click()
 		self.role_assign(1,1)		# making the publisher
 		self.role_assign(0,0)		# joining the tester_notifications in this community
 		self.role_assign(2,0)		# joining the user_notifications in this community
