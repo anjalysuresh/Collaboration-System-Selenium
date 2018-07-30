@@ -17,7 +17,7 @@ class create_env(unittest.TestCase):
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT')+"/login")
 		elem = driver.find_element_by_id("id_username")
 		user = config('CONTENT_TOOLS_USER').split(",")
-		elem.send_keys(user[1])
+		elem.send_keys(user[3])
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('CONTENT_TOOLS_PASSWORD'))
 		driver.find_element_by_class_name('btn-block').click()
