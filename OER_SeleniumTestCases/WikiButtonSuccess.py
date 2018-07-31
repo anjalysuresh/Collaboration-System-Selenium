@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import unittest
+from decouple import config
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import os
