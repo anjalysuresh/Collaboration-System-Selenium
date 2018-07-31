@@ -44,7 +44,7 @@ class create_env(unittest.TestCase):
 
 	def test_assigning_roles(self):
 		driver = self.driver
-		self.login(3)
+		self.login(3)			# logging in by the admin of the community since he is the creator of the community and can add other users to the community with different roles
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/communities/')
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('CONTENT_TOOLS_COMMUNITY_ID') + '/"]').click()
 		print (driver.current_url)
