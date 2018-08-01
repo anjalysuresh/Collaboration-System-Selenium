@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from decouple import config
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
 
@@ -25,7 +26,7 @@ class contenttools(unittest.TestCase):
       elem.send_keys(config('NOTIFICATION_PASSWORD'))
       driver.find_element_by_class_name('btn-block').click()
       
-    def test_draftToVisisbleState(self):
+    def test_deleteArticle(self):
       driver = self.driver
       self.login(3) # logging in with tester who is the creater of the article
       driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/mydashboard/')
