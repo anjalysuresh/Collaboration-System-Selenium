@@ -33,6 +33,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_xpath("//button [@type='button' and @data-target='#modalCreateh5p']").click()
 		driver.find_element_by_id("exampleCheck4").click()
 		driver.find_element_by_id("Yes").click()
+		time.sleep(10)
 		title = driver.find_element_by_id("id_title")
 		title.send_keys("TEST h5p Content Tools abc")
 		driver.find_element_by_id("id_h5p_type_0").click()
