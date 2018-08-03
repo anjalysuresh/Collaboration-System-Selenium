@@ -40,7 +40,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_xpath("//label [@for='id_h5p_type_1']").click()
 		time.sleep(5)
 		driver.find_element_by_id("submit_editor").click()
-		driver.find_element_by_name("h5peditor-library").click()
+		driver.find_element_by_class_name("h5peditor").click()
 		
 		
 
