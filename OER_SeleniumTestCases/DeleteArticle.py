@@ -30,10 +30,10 @@ class contenttools(unittest.TestCase):
       driver = self.driver
       self.login(0) # logging in with tester_contenttools who is the creater of the article
       driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/mydashboard/')
-      driver.print(driver.current_url)
+      print (driver.current_url)
       driver.sleep(5)
       driver.find_element_by_xpath('//a [@href="/article-view/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
-      print(driver.current_url)
+      print (driver.current_url)
       driver.find_element_by_xpath('//a [@href="/article-edit/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
       driver.find_element_by_xpath('//a [@href="/article-delete/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
       print (driver.current_url)
