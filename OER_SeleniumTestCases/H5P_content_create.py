@@ -27,7 +27,7 @@ class create_env(unittest.TestCase):
 		print (driver.current_url)
 		driver.find_element_by_xpath('//a [@href="/community-view/' + config('CONTENT_TOOLS_COMMUNITY_ID') + '/"]').click()
 		#driver.find_element_by_id("create_resource_id").click()
-		#time.sleep(5)
+		time.sleep(5)
 		#driver.find_element_by_xpath("//button [@type='button' and @data-target='#modalCreate']").click()
 		driver.find_element_by_xpath("//button [@type='button' and @data-target='#modalCreate']").click()
 		driver.find_element_by_xpath("//button [@type='button' and @data-target='#modalCreateh5p']").click()
