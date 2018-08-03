@@ -36,9 +36,9 @@ class create_env(unittest.TestCase):
 		time.sleep(10)
 		title = driver.find_element_by_id("id_title")
 		title.send_keys("TEST h5p Content Tools abc")
-		driver.find_element_by_id("id_h5p_type_0").click()
+		driver.find_element_by_xpath("//label [@for='id_h5p_type_0']").click()
 		time.sleep(10)
-		driver.find_element_by_id("id_h5p_type_1").click()
+		driver.find_element_by_xpath("//label [@for='id_h5p_type_1']").click()
 		time.sleep(10)
 		driver.find_element_by_id("submit_editor").click()
 		
