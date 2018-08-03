@@ -33,7 +33,7 @@ class contenttools(unittest.TestCase):
       driver.print(driver.current_url)
       driver.sleep(5)
       driver.find_element_by_xpath('//a [@href="/article-view/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
-      driver.print(driver.current_url)
+      print(driver.current_url)
       driver.find_element_by_xpath('//a [@href="/article-edit/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
       driver.find_element_by_xpath('//a [@href="/article-delete/' + config('CONTENT_TOOLS_ARTICLE_ID') + '/"]').click()
       print (driver.current_url)
