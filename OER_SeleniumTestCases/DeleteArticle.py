@@ -16,14 +16,14 @@ class contenttools(unittest.TestCase):
 
     def login(self,var):
       driver = self.driver
-      driver.get("http://" + config('IP_ADDRESS')+ ":" + config('NOTIFICATION_PORT'))
+      driver.get("http://" + config('IP_ADDRESS')+ ":" + config('CONTENT_TOOLS_PORT'))
       driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
-      driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT') + '/login/?next=/')
+      driver.get("http://" + config('IP_ADDRESS') + ":" + config('CONTENT_TOOLS_PORT') + '/login/?next=/')
       elem = driver.find_element_by_id("id_username")
-      user = config('NOTIFICATION_USER').split(',')
+      user = config('CONTENT_TOOLS_USER').split(',')
       elem.send_keys(user[var])
       elem = driver.find_element_by_id("id_password")
-      elem.send_keys(config('NOTIFICATION_PASSWORD'))
+      elem.send_keys(config('CONTENT_TOOLS_PASSWORD'))
       driver.find_element_by_class_name('btn-block').click()
       
     def test_deleteArticle(self):
