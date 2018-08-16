@@ -25,7 +25,7 @@ class create_env(unittest.TestCase):
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
 		print (driver.current_url)
-		name ="Test Community abc 1"
+		name ="Test Community abc A"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
