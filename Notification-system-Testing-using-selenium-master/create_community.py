@@ -15,6 +15,7 @@ class create_env(unittest.TestCase):
 		driver = self.driver
 		# Logging in by admin
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/login")
+		print (driver.current_url)
 		elem = driver.find_element_by_id("id_username")
 		user = config('NOTIFICATION_USER').split(',')
 		elem.send_keys(user[3])
@@ -23,7 +24,8 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
-		name ="Test Community abc 1"
+		print (driver.current_url)
+		name ="Test1"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
@@ -42,6 +44,7 @@ class create_env(unittest.TestCase):
 		#element.send_keys("/home/anjali/community.jpg")
 		element =driver.find_element_by_id("create")
 		element.click()
+		print (driver.current_url)
 		# Extracting the community id
 		var = driver.current_url
 		community_id = var.split("/")[-2]
