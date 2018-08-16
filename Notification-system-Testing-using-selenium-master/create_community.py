@@ -25,7 +25,7 @@ class create_env(unittest.TestCase):
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/create_community")
 		print (driver.current_url)
-		name ="Test1"
+		name ="Test Community abc 1"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
@@ -34,7 +34,7 @@ class create_env(unittest.TestCase):
 		elem.send_keys(name)
 		elem = driver.find_element_by_id("tag_line")
 		elem.send_keys(tag_line)
-		elem = driver.find_element_by_name("desc")
+		elem = driver.find_element_by_name("comm_text_box")
 		elem.send_keys(description)
 		elem = driver.find_element_by_id("category")
 		elem.send_keys(category)
