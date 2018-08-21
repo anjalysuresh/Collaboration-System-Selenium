@@ -33,7 +33,7 @@ class create_env(unittest.TestCase):
 	def role_assign(self, user_id, role_id):
 		driver = self.driver
 		elem = driver.find_element_by_id("username")
-		user = config('EVENT_LOGS_USER').split(',')
+		user = config('EVENT_LOGS_USERS').split(',')
 		elem.send_keys(user[user_id])
 		role = config('EVENT_LOGS_ROLE').split(',')
 		elem = driver.find_element_by_id("role")
