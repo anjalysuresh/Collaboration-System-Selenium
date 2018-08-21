@@ -23,7 +23,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_class_name('btn-block').click()
 		# Creating community
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('PORT')+"/create_community")
-		name ="Test Community eventlogs"
+		name ="Test Community eventlogs abc"
 		tag_line= "only meant for testing"
 		description= "only meant for testing"
 		category= "testing"
