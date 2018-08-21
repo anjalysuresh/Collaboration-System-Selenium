@@ -26,13 +26,13 @@ class create_env(unittest.TestCase):
 
 	def test_create_users(self):
 		driver = self.driver
-		user = config('EVENT_LOGS_USER')
+		user = config('EVENT_LOGS_USERS').split(',')
 		password = config('EVENT_LOGS_PASSWORD')
 		email = "@gmail.com"
-		self.create_user(user,user+email,password)
-		#self.create_user(user[1],user[1]+email,password)
-		#self.create_user(user[2],user[2]+email,password)
-		#self.create_user(user[4],user[4]+email,password)
+		self.create_user(user[0],user[0]+email,password)
+		self.create_user(user[1],user[1]+email,password)
+		self.create_user(user[2],user[2]+email,password)
+		self.create_user(user[4],user[4]+email,password)
 
 
 	def tearDown(self):
