@@ -24,7 +24,7 @@ class create_env(unittest.TestCase):
 		driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('PORT') + '/login/?next=/')
 		elem = driver.find_element_by_id("id_username")
-		user = config('EVENT_LOGS_USER').split(',')
+		user = config('EVENT_LOGS_USERS').split(',')
 		elem.send_keys(user[var])
 		elem = driver.find_element_by_id("id_password")
 		elem.send_keys(config('EVENT_LOGS_PASSWORD'))
