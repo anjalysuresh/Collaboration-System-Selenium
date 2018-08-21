@@ -60,14 +60,14 @@ class test(unittest.TestCase):
                 self.assertEqual(data[0]["event"]["community-id"], self.community_id)
             else:
                 self.assertFalse(True)
-	# Extracting the article id
-	var = driver.current_url
-	article_id = var.split("/")[-2]
-	f = open(".env","a")
-	f.write("\nEVENT_LOGS_ARTICLE_ID="+article_id)
-	f.close()
+        # Extracting the article id
+        var = driver.current_url
+        article_id = var.split("/")[-2]
+        f = open(".env","a")
+        f.write("\nEVENT_LOGS_ARTICLE_ID="+article_id)
+        f.close()
 	
-	driver.quit()
+        driver.quit()
 
 if __name__ == '__main__':
     unittest.main()
