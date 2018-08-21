@@ -54,7 +54,7 @@ class test(unittest.TestCase):
             new_result[key.lower()] = value
         if (new_result["status code"] == 200):
             data = new_result["result"]
-            print (">>>>>>>>>>>>>>>>new_result["total hits"]>>>>>>>>>>>>>", new_result["total hits"])
+            print (">>>>>>>>>>>>>>>>new_result['total hits']>>>>>>>>>>>>>", new_result["total hits"])
             if (new_result["total hits"] == total_hits+ 1):
                 self.assertEqual(data[0]["event_name"], "event.article.create")
                 self.assertEqual(data[0]["event"]["community-id"], self.community_id)
