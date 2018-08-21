@@ -60,8 +60,7 @@ class test(unittest.TestCase):
                 self.assertEqual(data[0]["event"]["community-id"], self.community_id)
             else:
                 self.assertFalse(True)
-        
-        # Extracting the article id
+	# Extracting the article id
 	var = driver.current_url
 	article_id = var.split("/")[-2]
 	f = open(".env","a")
