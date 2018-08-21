@@ -26,7 +26,7 @@ class create_env(unittest.TestCase):
 
 	def test_create_users(self):
 		driver = self.driver
-		user = config('EVENT_LOGS_USER').split
+		user = config('EVENT_LOGS_USER')
 		password = config('EVENT_LOGS_PASSWORD')
 		email = "@gmail.com"
 		self.create_user(user,user+email,password)
