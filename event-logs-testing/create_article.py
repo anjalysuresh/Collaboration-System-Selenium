@@ -66,9 +66,9 @@ class test(unittest.TestCase):
 	article_id = var.split("/")[-2]
 	f = open(".env","a")
 	f.write("\nEVENT_LOGS_ARTICLE_ID="+article_id)
-        f.close()
-
-        driver.quit()
+	f.close()
+	
+	driver.quit()
 
 if __name__ == '__main__':
     unittest.main()
