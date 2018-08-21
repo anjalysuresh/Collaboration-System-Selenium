@@ -21,7 +21,7 @@ class test(unittest.TestCase):
         driver = self.driver
         #driver.get(self.url_basic)
         #driver.find_element_by_xpath('//a [@href="/login/?next=/"]').click()
-	driver.get("http://" + config('IP_ADDRESS') + ":" + config('PORT')+"/login")
+        driver.get("http://" + config('IP_ADDRESS') + ":" + config('PORT')+"/login")
         elem = driver.find_element_by_id("id_username")
         elem.send_keys(self.user)
         elem = driver.find_element_by_id("id_password")
