@@ -62,10 +62,10 @@ class test(unittest.TestCase):
                 self.assertFalse(True)
         
         # Extracting the article id
-		var = driver.current_url
-		article_id = var.split("/")[-2]
-		f = open(".env","a")
-		f.write("\nEVENT_LOGS_ARTICLE_ID="+article_id)
+	var = driver.current_url
+	article_id = var.split("/")[-2]
+	f = open(".env","a")
+	f.write("\nEVENT_LOGS_ARTICLE_ID="+article_id)
         f.close()
 
         driver.quit()
