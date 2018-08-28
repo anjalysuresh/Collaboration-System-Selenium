@@ -8,7 +8,7 @@ class create_env(unittest.TestCase):
 
 	def setUp(self):
 		cap= DesiredCapabilities().FIREFOX
-                cap["marionette"]= True
+                cap["marionette"] = True
                 self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
 
 
