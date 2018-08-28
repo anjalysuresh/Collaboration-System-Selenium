@@ -8,9 +8,9 @@ class create_env(unittest.TestCase):
 
 	def setUp(self):
 		cap= DesiredCapabilities().FIREFOX
-                cap["marionette"]= True
-                self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-                
+        cap["marionette"]= True
+        self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+
 
 	def create_user(self,username,email,password):
 		driver = self.driver
@@ -24,7 +24,7 @@ class create_env(unittest.TestCase):
 		elem.send_keys(password)
 		elem = driver.find_element_by_id("password2")
 		elem.send_keys(password_confirmation)
-		driver.find_element_by_id('submit').click()	
+		driver.find_element_by_id('submit').click()
 
 	def test_create_users(self):
 		driver = self.driver
@@ -43,4 +43,3 @@ class create_env(unittest.TestCase):
 
 if __name__ == '__main__':
 	unittest.main()
-
