@@ -8,9 +8,8 @@ class create_env(unittest.TestCase):
 
 	def setUp(self):
 		
-                self.driver =ca webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
-
-
+                self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+	
 	def create_user(self,username,email,password):
 		driver = self.driver
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/signup")
