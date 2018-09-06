@@ -12,7 +12,7 @@ class create_env(unittest.TestCase):
 	
 	def create_user(self,username,email,password):
 		driver = self.driver
-		driver.get("http://www.google.com")
+		
 		driver.get("http://" + config('IP_ADDRESS') + ":" + config('NOTIFICATION_PORT')+"/signup")
 		password_confirmation= password
 		elem = driver.find_element_by_id("username")
