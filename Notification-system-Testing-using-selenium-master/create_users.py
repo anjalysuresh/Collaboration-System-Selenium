@@ -8,7 +8,7 @@ class create_env(unittest.TestCase):
 
 	def setUp(self):
 		
-                self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+                self.driver = webdriver.Remote(command_executor='http://'+config('DOCKER_IP')+':'+config('DOCKER_PORT')+'/wd/hub',desired_capabilities=DesiredCapabilities.CHROME)
 	
 	def create_user(self,username,email,password):
 		driver = self.driver
